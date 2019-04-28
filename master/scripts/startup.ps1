@@ -26,14 +26,19 @@ if(Test-Path 'c:/backups') {
 }
 
 # Note: download plugins
+if (!(Test-Path "c:/jenkins/plugins")) {
+    Write-Host "Creating plugins folder"
+    New-Item "c:/jenkins/plugins" -itemtype directory
+}
+
 if(Test-Path 'c:/scripts/plugins.txt') {
     Get-Content 'c:/scripts/plugins.txt' |
         ForEach-Object {
             $plugin = $_
             $url = "$env:JENKINS_UC/download/plugins/$plugin/latest/${plugin}.hpi"
 
-            if (Test-Path "c:/jenkins/plugins") {
-                Write-Host "Skipping plugin:`t[$plugin]"
+            if (Test-Path "c:/jenkins/plugins/${plugin}") {
+                Write-Host "Skipping plugin:`t[$plugin]-`t'c:/jenkins/plugins/${plugin}'exists"
             }
             else {
                 Write-Host "Downloading plugin:`t[$plugin]`tfrom`t$url"
