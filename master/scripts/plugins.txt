@@ -90,7 +90,6 @@ pipeline-stage-step
 pipeline-stage-tags-metadata
 pipeline-stage-view
 plain-credentials
-pluginscomplte.txt
 powershell
 pubsub-light
 resource-disposer
