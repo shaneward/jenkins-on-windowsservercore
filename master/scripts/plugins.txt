@@ -54,6 +54,7 @@ github-organization-folder
 git-server
 gradle
 handlebars
+handy-uri-templates-2-api
 htmlpublisher
 icon-shim
 jackson2-api
@@ -71,6 +72,7 @@ mapdb-api
 matrix-auth
 matrix-project
 maven-plugin
+mercurial
 metrics
 momentjs
 msbuild
